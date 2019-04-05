@@ -88,6 +88,7 @@ namespace Mail
 
        public User authUser(string login,string password)
        {
+            
             connection.Open();
             OleDbCommand comand = new OleDbCommand(String.Format("SELECT * FROM users WHERE login='{0}' AND pass='{1}'", login,password),connection);
             OleDbDataReader reader = comand.ExecuteReader();
@@ -105,25 +106,35 @@ namespace Mail
                     connection.Close();
                     reader.Close();
                     return User.Admin;
-                break;
+                
                 case User.Operator:
                     connection.Close();
                     reader.Close();
                     return User.Operator;
-                    break;
+               
                 case User.User:
                     connection.Close();
                     reader.Close();
                     return User.User;
-                    break;
+                
                 default:
                     connection.Close();
                     reader.Close();
                     return User.NoUser;
-                    break;
+                
             }
             
 
         }
+
+        public void logAuthuser(string login) {
+            connection.Open();
+            OleDbCommand comand = new OleDbCommand(String.Format("SELECT id FROM users WHERE login='{0}';",login), connection);
+            OleDbDataReader reader = comand.ExecuteReader();
+            reader.Read();
+            OleDbCommand writeData = new OleDbCommand(String.Format("INSERT INTO "),connection);
+            connection.Close();
+        }
+
     }
 }
