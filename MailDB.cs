@@ -132,9 +132,23 @@ namespace Mail
             OleDbCommand comand = new OleDbCommand(String.Format("SELECT id FROM users WHERE login='{0}';",login), connection);
             OleDbDataReader reader = comand.ExecuteReader();
             reader.Read();
-            OleDbCommand writeData = new OleDbCommand(String.Format("INSERT INTO "),connection);
+            OleDbCommand writeData = new OleDbCommand(String.Format("INSERT INTO logOP (actionOP,id_users) VALUES ('{0}',{1})","Вход",reader[0]),connection);
+            writeData.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void logautUser(string login)
+        {
+            connection.Open();
+            OleDbCommand comand = new OleDbCommand(String.Format("SELECT id FROM users WHERE login='{0}';", login), connection);
+            OleDbDataReader reader = comand.ExecuteReader();
+            reader.Read();
+            OleDbCommand writeData = new OleDbCommand(String.Format("INSERT INTO logOP (actionOP,id_users) VALUES ('{0}',{1})", "Выход", reader[0]), connection);
+            writeData.ExecuteNonQuery();
+            connection.Close();
+        }
+
+       
 
     }
 }

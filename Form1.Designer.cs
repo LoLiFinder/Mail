@@ -90,7 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
