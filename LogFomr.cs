@@ -31,6 +31,7 @@ namespace Mail
             dataGridView1.Columns[1].HeaderText = "Дейтвие";
             dataGridView1.Columns[2].HeaderText = "Время";
             dataGridView1.Columns[3].HeaderText = "Пользователь";
+            connect.Close();
 
         }
     }

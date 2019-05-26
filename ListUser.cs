@@ -30,6 +30,7 @@ namespace Mail
             dataGridView1.Columns[1].HeaderText = "Логин";
             dataGridView1.Columns[2].HeaderText = "Пароль";
             dataGridView1.Columns[3].HeaderText = "Уровень доступа";
+            connection.Close();
         }
     }
 }

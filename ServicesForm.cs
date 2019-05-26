@@ -30,7 +30,7 @@ namespace Mail
             dataGridView1.Columns[1].HeaderText = "Наименование Услуги";
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].HeaderText = "Цена";
-
+            connection.Close();
         }
     }
 }

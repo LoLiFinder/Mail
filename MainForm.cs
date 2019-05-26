@@ -41,6 +41,7 @@ namespace Mail
             MessageBox.Show("Услуга добавлена!");
             textBox1.Clear();
             maskedTextBox1.Clear();
+            oleDb.Close();
 
         }
 
@@ -78,6 +79,11 @@ namespace Mail
         {
             AddUserForm addUser = new AddUserForm();
             addUser.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

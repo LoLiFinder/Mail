@@ -75,6 +75,13 @@ namespace Mail
                 command.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Услуга оформлена");
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                maskedTextBox1.Clear();
+                maskedTextBox2.Clear();
+                maskedTextBox3.Clear();
                 if (printDialog1.ShowDialog() == DialogResult.OK)
                 {
                     printDocument1.Print();

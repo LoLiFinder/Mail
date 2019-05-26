@@ -112,7 +112,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "AddUserForm";
-            this.Text = "AddUserForm";
+            this.Text = "Добавление пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
 
